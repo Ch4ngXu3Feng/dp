@@ -6,7 +6,7 @@ import (
 )
 
 func TestAbstractFactory(*testing.T) {
-    fmt.Printf("\nTest Abstract Factory:\n\n")
+    fmt.Printf("Test Abstract-Factory:\n\n")
 
     xf := NewXxxFactory()
     xa := xf.CreateProductA()
@@ -19,4 +19,6 @@ func TestAbstractFactory(*testing.T) {
     zb := zf.CreateProductB()
     za.Action()
     zb.Action()
+
+    fmt.Printf("\n")
 }

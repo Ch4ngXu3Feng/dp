@@ -6,7 +6,7 @@ import (
 )
 
 func TestState(*testing.T) {
-    fmt.Printf("\nTest State:\n\n")
+    fmt.Printf("Test State:\n\n")
 
     var context *StateContext
 
@@ -17,4 +17,6 @@ func TestState(*testing.T) {
     Zzz := NewZzzState()
     context = NewStateContext(&Zzz.State)
     context.Request()
+
+    fmt.Printf("\n")
 }

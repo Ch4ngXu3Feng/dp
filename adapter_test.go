@@ -6,14 +6,22 @@ import (
 )
 
 func TestAdapter(*testing.T) {
-    fmt.Printf("\nTest Adapter:\n\n")
+    fmt.Printf("Test Adapter:\n\n")
 
+    var f *File
+    var r *Resource
+    var ok bool
     adapter := NewAdapter()
-    i := (IAdapter)(adapter)
-    //t := reflect.TypeOf(i)
-    fmt.Printf("Test Adapter addr %x\n", adapter)
-    v, ok := i.(* Adapter)
+
+    r, ok = adapter.GetAdapter(r).(*Resource)
     if ok {
-        fmt.Printf("Test Adapter addr %x\n", v)
+        r.Show()
     }
+
+    f, ok = adapter.GetAdapter(f).(*File)
+    if ok {
+        f.Show()
+    }
+
+    fmt.Printf("\n")
 }

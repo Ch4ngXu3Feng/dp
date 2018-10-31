@@ -6,8 +6,10 @@ import (
 )
 
 func TestTemplateMethod(*testing.T) {
-    fmt.Printf("\nTest Template Method:\n\n")
+    fmt.Printf("Test Template-Method:\n\n")
 
     ct := NewConcreteTemplate()
     ct.Operation()
+
+    fmt.Printf("\n")
 }

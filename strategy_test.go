@@ -6,7 +6,7 @@ import (
 )
 
 func TestStrategy(*testing.T) {
-    fmt.Printf("\nTest Strategy:\n\n")
+    fmt.Printf("Test Strategy:\n\n")
 
     sc := NewStrategyContext()
 
@@ -15,4 +15,6 @@ func TestStrategy(*testing.T) {
 
     sc.SetStrategy(1)
     sc.Do()
+
+    fmt.Printf("\n")
 }

@@ -6,9 +6,11 @@ import (
 )
 
 func TestChain(*testing.T) {
-    fmt.Printf("\nTest Chain:\n\n")
+    fmt.Printf("Test Chain:\n\n")
 
     var handler IHandler
     handler = NewXxxHandler(NewZzzHandler(nil))
     handler.Handle()
+
+    fmt.Printf("\n")
 }

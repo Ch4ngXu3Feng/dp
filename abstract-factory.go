@@ -17,11 +17,17 @@ func (f *AbstractFactory) Init() {
 }
 
 func (f *AbstractFactory) CreateProductA() *AbstractProductA {
-    panic("AbstractFactory CreateProductA called\n")
+    if _, ok := f.IAbstractFactory.(*AbstractFactory); ok {
+        panic("AbstractFactory CreateProductA oops\n")
+    }
+    return f.IAbstractFactory.CreateProductA()
 }
 
 func (f *AbstractFactory) CreateProductB() *AbstractProductB {
-    panic("AbstractFactory CreateProductB called\n")
+    if _, ok := f.IAbstractFactory.(*AbstractFactory); ok {
+        panic("AbstractFactory CreateProductB oops\n")
+    }
+    return f.IAbstractFactory.CreateProductB()
 }
 
 func NewAbstractFactory() *AbstractFactory {

@@ -51,14 +51,14 @@ type XxxCommand struct {
 }
 
 func (c *XxxCommand) Init() {
-    fmt.Printf("XxxCommand Init\n")
     c.Command.Init()
     c.ICommand = c
+    fmt.Printf("XxxCommand Init\n")
 }
 
 func (c *XxxCommand) Execute() {
-    fmt.Printf("XxxCommand Execute\n")
     c.Receiver.Action()
+    fmt.Printf("XxxCommand Execute\n")
 }
 
 func NewXxxCommand(r *Receiver) *XxxCommand {

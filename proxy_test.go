@@ -6,9 +6,11 @@ import (
 )
 
 func TestProxy(*testing.T) {
-    fmt.Printf("\nTest Proxy:\n\n")
+    fmt.Printf("Test Proxy:\n\n")
 
     var subject IObject
     subject = NewObjectProxy()
     subject.Request()
+
+    fmt.Printf("\n")
 }
