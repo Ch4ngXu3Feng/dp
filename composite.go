@@ -10,14 +10,14 @@ type IComponent interface {
 }
 
 type Component struct {
+    IComponent
     Name string
     children []*Component
-    IComponent
 }
 
 func (c *Component) Init() {
-    c.IComponent = c
     fmt.Printf("Component Init\n")
+    c.IComponent = c
 }
 
 func (c *Component) Operation() {
@@ -44,9 +44,9 @@ type Composite struct {
 }
 
 func (c *Composite) Init() {
+    fmt.Printf("Composite Init\n")
     c.Component.Init()
     c.IComponent = c
-    fmt.Printf("Composite Init\n")
 }
 
 func (c *Composite) Operation() {
@@ -71,9 +71,9 @@ type Leaf struct {
 }
 
 func (l *Leaf) Init() {
+    fmt.Printf("Leaf Init\n")
     l.Component.Init()
     l.IComponent = l
-    fmt.Printf("Leaf Init\n")
 }
 
 func (l *Leaf) Operation() {

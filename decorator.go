@@ -32,8 +32,8 @@ type Decorator struct {
 }
 
 func (d *Decorator) Init() {
-    fmt.Printf("Decorator Init\n")
     d.IVisualComponent = d
+    fmt.Printf("Decorator Init\n")
 }
 
 func (d *Decorator) Draw(text string) {
@@ -53,14 +53,14 @@ type XxxDecorator struct {
 }
 
 func (d *XxxDecorator) Init() {
+    fmt.Printf("XxxDecorator Init\n")
     d.Decorator.Init()
     d.IVisualComponent = d
-    fmt.Printf("XxxDecorator Init\n")
 }
 
 func (d *XxxDecorator) Draw(text string) {
-    d.Decorator.Draw(text)
     fmt.Printf("XxxDecorator Draw %s\n", text)
+    d.Decorator.Draw(text)
 }
 
 func NewXxxDecorator(component IVisualComponent) *XxxDecorator {
@@ -78,14 +78,14 @@ type ZzzDecorator struct {
 }
 
 func (d *ZzzDecorator) Init() {
+    fmt.Printf("ZzzDecorator Init\n")
     d.Decorator.Init()
     d.IVisualComponent = d
-    fmt.Printf("ZzzDecorator Init\n")
 }
 
 func (d *ZzzDecorator) Draw(text string) {
-    d.Decorator.Draw(text)
     fmt.Printf("ZzzDecorator Draw %s\n", text)
+    d.Decorator.Draw(text)
 }
 
 func NewZzzDecorator(component IVisualComponent) *ZzzDecorator {

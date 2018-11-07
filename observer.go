@@ -10,14 +10,14 @@ type ISubject interface {
 }
 
 type Subject struct {
+    ISubject
     state int
     observers []*Observer
-    ISubject
 }
 
 func (s *Subject) Init() {
-    s.ISubject = s
     fmt.Printf("Subject Init\n")
+    s.ISubject = s
 }
 
 func (s *Subject) Attach(o *Observer) {
@@ -49,9 +49,9 @@ type ConcreteSubject struct {
 }
 
 func (s *ConcreteSubject) Init() {
+    fmt.Printf("ConcreteSubject Init\n")
     s.Subject.Init()
     s.ISubject = s
-    fmt.Printf("ConcreteSubject Init\n")
 }
 
 func (s *ConcreteSubject) SetState(state int) {
@@ -74,8 +74,8 @@ type Observer struct {
 }
 
 func (o *Observer) Init() {
-    o.IObserver = o
     fmt.Printf("Observer Init\n")
+    o.IObserver = o
 }
 
 func (o *Observer) Update(s *Subject) {
@@ -96,9 +96,9 @@ type XxxObserver struct {
 }
 
 func (o *XxxObserver) Init() {
+    fmt.Printf("XxxObserver Init\n")
     o.Observer.Init()
     o.IObserver = o
-    fmt.Printf("XxxObserver Init\n")
 }
 
 func (o *XxxObserver) Update(s *Subject) {
@@ -116,9 +116,9 @@ type ZzzObserver struct {
 }
 
 func (o *ZzzObserver) Init() {
+    fmt.Printf("ZzzObserver Init\n")
     o.Observer.Init()
     o.IObserver = o
-    fmt.Printf("ZzzObserver Init\n")
 }
 
 func (o *ZzzObserver) Update(s *Subject) {

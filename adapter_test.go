@@ -11,15 +11,14 @@ func TestAdapter(*testing.T) {
     var f *File
     var r *Resource
     var ok bool
+
     adapter := NewAdapter()
 
-    r, ok = adapter.GetAdapter(r).(*Resource)
-    if ok {
+    if r, ok = adapter.GetAdapter(r).(*Resource); ok {
         r.Show()
     }
 
-    f, ok = adapter.GetAdapter(f).(*File)
-    if ok {
+    if f, ok = adapter.GetAdapter(f).(*File); ok {
         f.Show()
     }
 

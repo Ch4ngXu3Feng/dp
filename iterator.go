@@ -13,8 +13,8 @@ type Iterator struct {
 }
 
 func (i *Iterator) Init() {
-    i.IIterator = i
     fmt.Printf("Iterator Init\n")
+    i.IIterator = i
 }
 
 func (i *Iterator) First() interface{} {
@@ -46,15 +46,15 @@ func NewIterator() *Iterator {
 }
 
 type ElementsIterator struct {
+    Iterator
     index int
     elements *Elements
-    Iterator
 }
 
 func (i *ElementsIterator) Init() {
+    fmt.Printf("ElementsIterator Init\n")
     i.Iterator.Init()
     i.IIterator = i
-    fmt.Printf("ElementsIterator Init\n")
 }
 
 func (i *ElementsIterator) First() interface{} {

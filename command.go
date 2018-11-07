@@ -46,19 +46,19 @@ func NewCommand() *Command {
 }
 
 type XxxCommand struct {
-    Receiver *Receiver
     Command
+    Receiver *Receiver
 }
 
 func (c *XxxCommand) Init() {
+    fmt.Printf("XxxCommand Init\n")
     c.Command.Init()
     c.ICommand = c
-    fmt.Printf("XxxCommand Init\n")
 }
 
 func (c *XxxCommand) Execute() {
-    c.Receiver.Action()
     fmt.Printf("XxxCommand Execute\n")
+    c.Receiver.Action()
 }
 
 func NewXxxCommand(r *Receiver) *XxxCommand {

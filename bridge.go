@@ -14,8 +14,8 @@ type Graph struct {
 }
 
 func (g *Graph) Init() {
-    g.IGraph = g
     fmt.Printf("Graph Init\n")
+    g.IGraph = g
 }
 
 func (g *Graph) DrawText() {
@@ -41,9 +41,9 @@ type XxxGraph struct {
 }
 
 func (g *XxxGraph) Init() {
+    fmt.Printf("XxxGraph Init\n")
     g.Graph.Init()
     g.IGraph = g
-    fmt.Printf("XxxGraph Init\n")
 }
 
 func (g *XxxGraph) deviceDrawText() {
@@ -73,9 +73,9 @@ type ZzzGraph struct {
 }
 
 func (g *ZzzGraph) Init() {
+    fmt.Printf("ZzzGraph Init\n")
     g.Graph.Init()
     g.IGraph = g
-    fmt.Printf("ZzzGraph Init\n")
 }
 
 func (g *ZzzGraph) deviceDrawText() {
@@ -117,6 +117,7 @@ func (w *Window) DrawText() {
 
 func (w *Window) DrawRect() {
     fmt.Printf("Window DrawRect\n")
+
     w.graph.DrawLine()
     w.graph.DrawLine()
     w.graph.DrawLine()
@@ -139,12 +140,13 @@ type Label struct {
 }
 
 func (l *Label) Init() {
-    l.Window.Init()
     fmt.Printf("Label Init\n")
+    l.Window.Init()
 }
 
 func (l *Label) DrawBorder() {
     fmt.Printf("Label DrawBorder\n")
+
     l.DrawLine()
     l.DrawRect()
     l.DrawText()
@@ -165,12 +167,13 @@ type Button struct {
 }
 
 func (b *Button) Init() {
-    b.Window.Init()
     fmt.Printf("Button Init\n")
+    b.Window.Init()
 }
 
 func (b *Button) DrawBorder() {
     fmt.Printf("Button DrawBorder\n")
+
     b.DrawLine()
     b.DrawRect()
     b.DrawLine()

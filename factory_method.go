@@ -8,13 +8,13 @@ type ICreator interface {
 }
 
 type Creator struct {
-    docs map[string]*Document
     ICreator
+    docs map[string]*Document
 }
 
 func (c *Creator) Init() {
-    c.ICreator = c
     fmt.Printf("Creator Init\n")
+    c.ICreator = c
 }
 
 func (c *Creator) CreateDocument(name string) *Document {
@@ -48,9 +48,9 @@ type XxxCreator struct {
 }
 
 func (c *XxxCreator) Init() {
+    fmt.Printf("XxxCreator Init\n")
     c.Creator.Init()
     c.ICreator = c
-    fmt.Printf("XxxCreator Init\n")
 }
 
 func (c *XxxCreator) CreateDocument(name string) *Document {
@@ -72,9 +72,9 @@ type ZzzCreator struct {
 }
 
 func (c *ZzzCreator) Init() {
+    fmt.Printf("ZzzCreator Init\n")
     c.Creator.Init()
     c.ICreator = c
-    fmt.Printf("ZzzCreator Init\n")
 }
 
 func (c *ZzzCreator) CreateDocument(name string) *Document {
@@ -96,13 +96,13 @@ type IDocument interface {
 }
 
 type Document struct {
-    Name string
     IDocument
+    Name string
 }
 
 func (d *Document) Init() {
-    d.IDocument = d
     fmt.Printf("Document Init\n")
+    d.IDocument = d
 }
 
 func (d *Document) Show() {
@@ -123,9 +123,9 @@ type XxxDocument struct {
 }
 
 func (d *XxxDocument) Init() {
+    fmt.Printf("XxxDocument Init\n")
     d.Document.Init()
     d.IDocument = d
-    fmt.Printf("XxxDocument Init\n")
 }
 
 func (d *XxxDocument) Show() {
@@ -147,9 +147,9 @@ type ZzzDocument struct {
 }
 
 func (d *ZzzDocument) Init() {
+    fmt.Printf("ZzzDocument Init\n")
     d.Document.Init()
     d.IDocument = d
-    fmt.Printf("ZzzDocument Init\n")
 }
 
 func (d *ZzzDocument) Show() {

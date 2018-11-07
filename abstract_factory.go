@@ -12,8 +12,8 @@ type AbstractFactory struct {
 }
 
 func (f *AbstractFactory) Init() {
-    f.IAbstractFactory = f
     fmt.Printf("AbstractFactory Init\n")
+    f.IAbstractFactory = f
 }
 
 func (f *AbstractFactory) CreateProductA() *AbstractProductA {
@@ -41,9 +41,9 @@ type XxxFactory struct {
 }
 
 func (f *XxxFactory) Init() {
+    fmt.Printf("XxxFactory Init\n")
     f.AbstractFactory.Init()
     f.IAbstractFactory = f
-    fmt.Printf("XxxFactory Init\n")
 }
 
 func (f *XxxFactory) CreateProductA() *AbstractProductA {
@@ -67,9 +67,9 @@ type ZzzFactory struct {
 }
 
 func (f *ZzzFactory) Init() {
+    fmt.Printf("ZzzFactory Init\n")
     f.AbstractFactory.Init()
     f.IAbstractFactory = f
-    fmt.Printf("ZzzFactory Init\n")
 }
 
 func (f *ZzzFactory) CreateProductA() *AbstractProductA {
@@ -97,8 +97,8 @@ type AbstractProductA struct {
 }
 
 func (a *AbstractProductA) Init() {
-    a.IAbstractProductA = a
     fmt.Printf("AbstractProductA Init\n")
+    a.IAbstractProductA = a
 }
 
 func (a *AbstractProductA) Action() {
@@ -116,9 +116,9 @@ type XxxProductA struct {
 }
 
 func (a *XxxProductA) Init() {
+    fmt.Printf("XxxProductA Init\n")
     a.AbstractProductA.Init()
     a.IAbstractProductA = a
-    fmt.Printf("XxxProductA Init\n")
 }
 
 func (a *XxxProductA) Action() {
@@ -136,9 +136,9 @@ type ZzzProductA struct {
 }
 
 func (a *ZzzProductA) Init() {
+    fmt.Printf("ZzzProductA Init\n")
     a.AbstractProductA.Init()
     a.IAbstractProductA = a
-    fmt.Printf("ZzzProductA Init\n")
 }
 
 func (a *ZzzProductA) Action() {
@@ -160,8 +160,8 @@ type AbstractProductB struct {
 }
 
 func (b *AbstractProductB) Init() {
-    b.IAbstractProductB = b
     fmt.Printf("AbstractProductB Init\n")
+    b.IAbstractProductB = b
 }
 
 func (b *AbstractProductB) Action() {
@@ -179,9 +179,9 @@ type XxxProductB struct {
 }
 
 func (b *XxxProductB) Init() {
+    fmt.Printf("XxxProductB Init\n")
     b.AbstractProductB.Init()
     b.IAbstractProductB = b
-    fmt.Printf("XxxProductB Init\n")
 }
 
 func (b *XxxProductB) Action() {
@@ -199,9 +199,9 @@ type ZzzProductB struct {
 }
 
 func (b *ZzzProductB) Init() {
+    fmt.Printf("ZzzProductB Init\n")
     b.AbstractProductB.Init()
     b.IAbstractProductB = b
-    fmt.Printf("ZzzProductB Init\n")
 }
 
 func (b *ZzzProductB) Action() {

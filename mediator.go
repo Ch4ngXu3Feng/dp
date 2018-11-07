@@ -44,8 +44,8 @@ type IWidget interface {
 }
 
 type Widget struct {
-    mediator *Mediator
     IWidget
+    mediator *Mediator
 }
 
 func (w *Widget) Changed() {
@@ -59,8 +59,8 @@ func NewWidget() *Widget {
 }
 
 func (w *Widget) Init() {
-    w.IWidget = w
     fmt.Printf("Widget Init\n")
+    w.IWidget = w
 }
 
 type XxxWidget struct {
@@ -82,9 +82,9 @@ type ZzzWidget struct {
 }
 
 func (w *ZzzWidget) Init() {
+    fmt.Printf("ZzzWidget Init\n")
     w.Widget.Init()
     w.IWidget = w
-    fmt.Printf("ZzzWidget Init\n")
 }
 
 func (w *ZzzWidget) Notify() {

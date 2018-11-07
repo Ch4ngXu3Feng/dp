@@ -12,8 +12,8 @@ type Handler struct {
 }
 
 func (h *Handler) Init() {
-    h.IHandler = h
     fmt.Printf("Handler Init\n")
+    h.IHandler = h
 }
 
 func (h *Handler) Handle() {
@@ -35,9 +35,9 @@ type XxxHandler struct {
 }
 
 func (h *XxxHandler) Init() {
+    fmt.Printf("XxxHandler Init\n")
     h.Handler.Init()
     h.IHandler = h
-    fmt.Printf("XxxHandler Init\n")
 }
 
 func (h *XxxHandler) Handle() {
@@ -60,9 +60,9 @@ type ZzzHandler struct {
 }
 
 func (h *ZzzHandler) Init() {
+    fmt.Printf("ZzzHandler Init\n")
     h.Handler.Init()
     h.IHandler = h
-    fmt.Printf("ZzzHandler Init\n")
 }
 
 func (h *ZzzHandler) Handle() {

@@ -31,8 +31,8 @@ type State struct {
 }
 
 func (s *State) Init() {
-    s.IState = s
     fmt.Printf("State Init\n")
+    s.IState = s
 }
 
 func NewState() *State {
@@ -46,9 +46,9 @@ type XxxState struct {
 }
 
 func (s *XxxState) Init() {
+    fmt.Printf("XxxState Init\n")
     s.State.Init()
     s.IState = s
-    fmt.Printf("XxxState Init\n")
 }
 
 func (s *XxxState) Handle() {
@@ -66,9 +66,9 @@ type ZzzState struct {
 }
 
 func (s *ZzzState) Init() {
+    fmt.Printf("ZzzState Init\n")
     s.State.Init()
     s.IState = s
-    fmt.Printf("ZzzState Init\n")
 }
 
 func (s *ZzzState) Handle() {

@@ -18,8 +18,8 @@ type Expression struct {
 }
 
 func (e *Expression) Init() {
-    e.IExpression = e
     fmt.Printf("Expression Init\n")
+    e.IExpression = e
 }
 
 func NewExpression() *Expression {
@@ -29,14 +29,14 @@ func NewExpression() *Expression {
 }
 
 type TerminalExpression struct {
-    Data string
     Expression
+    Data string
 }
 
 func (e *TerminalExpression) Init() {
+    fmt.Printf("TerminalExpression Init\n")
     e.Expression.Init()
     e.IExpression = e
-    fmt.Printf("TerminalExpression Init\n")
 }
 
 func (e *TerminalExpression) Interpret(c *Context) bool {
@@ -52,9 +52,9 @@ func NewTerminalExpression(data string) *TerminalExpression {
 }
 
 type AndExpression struct {
+    Expression
     exp1 *Expression
     exp2 *Expression
-    Expression
 }
 
 func (e *AndExpression) Interpret(c *Context) bool {
@@ -71,9 +71,9 @@ func NewAndExpression(exp1 *Expression, exp2 *Expression) *AndExpression {
 }
 
 type OrExpression struct {
+    Expression
     exp1 *Expression
     exp2 *Expression
-    Expression
 }
 
 func (e *OrExpression) Interpret(c *Context) bool {

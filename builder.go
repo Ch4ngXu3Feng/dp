@@ -61,8 +61,8 @@ type Builder struct {
 }
 
 func (b *Builder) Init() {
-    b.IBuilder = b
     fmt.Printf("Builder Init\n")
+    b.IBuilder = b
 }
 
 func (b *Builder) CreateHeader(p *Product) {
@@ -90,9 +90,9 @@ type XxxBuilder struct {
 }
 
 func (b *XxxBuilder) Init() {
+    fmt.Printf("XxxBuilder Init\n")
     b.Builder.Init()
     b.IBuilder = b
-    fmt.Printf("XxxBuilder Init\n")
 }
 
 func (b *XxxBuilder) CreateHeader(p *Product) {
@@ -116,9 +116,9 @@ type ZzzBuilder struct {
 }
 
 func (b *ZzzBuilder) Init() {
+    fmt.Printf("ZzzBuilder Init\n")
     b.Builder.Init()
     b.IBuilder = b
-    fmt.Printf("ZzzBuilder Init\n")
 }
 
 func (b *ZzzBuilder) CreateHeader(p *Product) {

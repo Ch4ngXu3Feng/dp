@@ -9,8 +9,8 @@ func TestFlyweight(*testing.T) {
     fmt.Printf("Test Flyweight:\n\n")
 
     var f *Flyweight
-
     fm := NewFlyweightManager()
+
     f = fm.GetFlyweight("Xxx")
     f.Operation()
 

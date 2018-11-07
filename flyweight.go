@@ -11,8 +11,8 @@ type Flyweight struct {
 }
 
 func (f *Flyweight) Init() {
-    f.IFlyweight = f
     fmt.Printf("Flyweight Init\n")
+    f.IFlyweight = f
 }
 
 func (f *Flyweight) Operation() {
@@ -27,9 +27,9 @@ type XxxFlyweight struct {
 }
 
 func (f *XxxFlyweight) Init() {
+    fmt.Printf("XxxFlyweight Init\n")
     f.Flyweight.Init()
     f.IFlyweight = f
-    fmt.Printf("XxxFlyweight Init\n")
 }
 
 func (f *XxxFlyweight) Operation() {
@@ -47,9 +47,9 @@ type ZzzFlyweight struct {
 }
 
 func (f *ZzzFlyweight) Init() {
+    fmt.Printf("ZzzFlyweight Init\n")
     f.Flyweight.Init()
     f.IFlyweight = f
-    fmt.Printf("ZzzFlyweight Init\n")
 }
 
 func (f *ZzzFlyweight) Operation() {

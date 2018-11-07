@@ -11,12 +11,14 @@ func TestAbstractFactory(*testing.T) {
     xf := NewXxxFactory()
     xa := xf.CreateProductA()
     xb := xf.CreateProductB()
+
     xa.Action()
     xb.Action()
 
     zf := NewZzzFactory()
     za := zf.CreateProductA()
     zb := zf.CreateProductB()
+
     za.Action()
     zb.Action()
 

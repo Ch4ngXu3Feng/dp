@@ -14,8 +14,8 @@ type Adapter struct {
 }
 
 func (a *Adapter) Init() {
-    a.IAdapter = a
     fmt.Printf("Adapter Init\n")
+    a.IAdapter = a
 }
 
 func (a *Adapter) GetClassName(class interface{}) string {
@@ -53,8 +53,8 @@ type IResource interface {
 }
 
 type Resource struct {
-    Name string
     IResource
+    Name string
 }
 
 func (r *Resource) Show() {

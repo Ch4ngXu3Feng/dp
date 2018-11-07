@@ -78,9 +78,9 @@ type ZzzStrategy struct {
 }
 
 func (s *ZzzStrategy) Init() {
+    fmt.Printf("ZzzStrategy Init\n")
     s.Strategy.Init()
     s.IStrategy = s
-    fmt.Printf("ZzzStrategy Init\n")
 }
 
 func (s *ZzzStrategy) Process() {

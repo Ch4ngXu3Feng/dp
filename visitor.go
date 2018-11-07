@@ -41,22 +41,20 @@ type XxxVisitor struct {
 }
 
 func (v *XxxVisitor) Init() {
+    fmt.Printf("XxxVisitor Init\n")
     v.Visitor.Init()
     v.IVisitor = v
-    fmt.Printf("XxxVisitor Init\n")
 }
 
 func (v *XxxVisitor) VisitXxxElement(e *Element) {
-    x, ok := e.IElement.(*XxxElement)
-    if ok {
+    if x, ok := e.IElement.(*XxxElement); ok {
         fmt.Printf("XxxVisitor VisitXxxElement:\n")
         x.Show()
     }
 }
 
 func (v *XxxVisitor) VisitZzzElement(e *Element) {
-    z, ok := e.IElement.(*ZzzElement)
-    if ok {
+    if z, ok := e.IElement.(*ZzzElement); ok {
         fmt.Printf("XxxVisitor VisitZzzElement:\n")
         z.Show()
     }
@@ -73,22 +71,20 @@ type ZzzVisitor struct {
 }
 
 func (v *ZzzVisitor) Init() {
+    fmt.Printf("ZzzVisitor Init\n")
     v.Visitor.Init()
     v.IVisitor = v
-    fmt.Printf("ZzzVisitor Init\n")
 }
 
 func (v *ZzzVisitor) VisitXxxElement(e *Element) {
-    x, ok := e.IElement.(*XxxElement)
-    if ok {
+    if x, ok := e.IElement.(*XxxElement); ok {
         fmt.Printf("ZzzVisitor VisitXxxElement:\n")
         x.Show()
     }
 }
 
 func (v *ZzzVisitor) VisitZzzElement(e *Element) {
-    z, ok := e.IElement.(*ZzzElement)
-    if ok {
+    if z, ok := e.IElement.(*ZzzElement); ok {
         fmt.Printf("ZzzVisitor VisitXxxElement:\n")
         z.Show()
     }
@@ -112,8 +108,8 @@ type Element struct {
 }
 
 func (e *Element) Init() {
-    e.IElement = e
     fmt.Printf("Element Init\n")
+    e.IElement = e
 }
 
 func (e *Element) Accept(v *Visitor) {
@@ -152,9 +148,9 @@ type XxxElement struct {
 }
 
 func (e *XxxElement) Init() {
+    fmt.Printf("XxxElement Init\n")
     e.Element.Init()
     e.IElement = e
-    fmt.Printf("XxxElement Init\n")
 }
 
 func (e *XxxElement) Accept(v *Visitor) {
@@ -181,9 +177,9 @@ type ZzzElement struct {
 }
 
 func (e *ZzzElement) Init() {
+    fmt.Printf("ZzzElement Init\n")
     e.Element.Init()
     e.IElement = e
-    fmt.Printf("ZzzElement Init\n")
 }
 
 func (e *ZzzElement) Accept(v *Visitor) {

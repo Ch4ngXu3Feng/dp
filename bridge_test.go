@@ -11,7 +11,6 @@ func TestBridge(*testing.T) {
     var graph IGraph
 
     graph = NewXxxGraph()
-    graph = NewGraph()
     b := NewButton(graph)
     b.DrawBorder()
 

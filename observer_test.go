@@ -9,6 +9,7 @@ func TestObserver(*testing.T) {
     fmt.Printf("Test Observer:\n\n")
 
     s := NewConcreteSubject()
+
     s.Attach(&NewXxxObserver().Observer)
     s.Attach(&NewZzzObserver().Observer)
 
